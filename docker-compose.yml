@@ -1,0 +1,13 @@
+version: '3.0'
+services:
+  rpi-bm-snake:
+    env_file:
+      - environment-setup.env
+    build: .
+    volumes:
+      - .:/opt/repository
+    working_dir: /opt/repository
+networks:
+  default:
+    external:
+      name: bridge
